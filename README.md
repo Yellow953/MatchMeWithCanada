@@ -23,3 +23,12 @@ Things you may want to cover:
 
 * ...
 # MatchMeWithCanada
+
+Primary Color Red: FFFF00
+Accent Color White: FFFFFF
+Drawer Background Color: FFFFBB
+Drawer Text Color: FFFFFF
+Header Text Color: FFFFFF
+Text Color FFFF00
+Text Color Pink FFFFAD
+Pink Button Color FFFFAE
