@@ -1,5 +1,63 @@
-<%= render "layouts/header" %>
+<script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 
-<div>
-    card with shadow
+<div class="preloader">
+    <%= image_tag "logo", class:"small-pic" %>
+</div>
+
+<script>
+    $(document).ready(function(){
+    setTimeout(function () {
+		$('.preloader').fadeOut();
+	}, 2000);
+    });
+</script>
+
+<div class="container-fluid m-0 p-0 p-2">
+    <div class="d-flex flex-row w-100">
+        <div class="banner card shadow">
+            <%= image_tag "img1", class:"img-fluid w-full h-auto" %>
+        </div>
+    </div>
+    <div>
+        <h2 class="text-custom-red text-center my-4"><i>Your first step towards Canada</i></h2>
+    </div>
+    <div class="d-flex flex-row w-100">
+        <div class="banner card shadow">
+            <%= image_tag "img2", class:"img-fluid w-full h-auto" %>
+        </div>
+    </div>
+    <div class="text-center">
+        <%= link_to "Get Started", get_started_path, class:"btn btn-danger my-3" %>
+    </div>
+    <div class="text-custom-pink text-center banner">
+        <blockquote>
+            <q>10-year dreams. 5-minute actions. Where do i want to be in 10 years? What can i do in the next 5 minutes to contribute to that outcome?</q><br>
+            -James Clear
+        </blockquote><br>
+
+        <blockquote>
+            <q>Action is hope. At the end of each day. when you've done your work, you lie there and think, Well, i'll be dammed, I did this today. It doesn't matter how good it is, or how bad -- you did it. At the end of the week you'll have a certain amount of accumulation. At the end of the year, you look back and say, I'll be damned, it's been a good year.</q><br>
+            -Ray Bradbury
+        </blockquote><br>
+
+        <blockquote>
+            <q>When someone tells me "no", it doesn't mean i can't do it, it simply means i can't do it with them.</q><br>
+            -Karen E. Quinones
+        </blockquote><br>
+
+        <blockquote>
+            <q>Even if you're on the right track, you'll still get run over if you just sit there.</q><br>
+            -Will Rogers
+        </blockquote><br>
+
+        <blockquote>
+            <q>Real difficulties can be overcome; it is only the imaginary ones that are unconquerable</q><br>
+            -Theodore N. Veil
+        </blockquote><br>
+
+        <blockquote>
+            <q>You'll feel better once you get started.</q><br>
+            -James Clear
+        </blockquote><br>
+    </div>
 </div>

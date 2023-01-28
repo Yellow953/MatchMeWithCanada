@@ -26,4 +26,4 @@ Things you may want to cover:
 
 Primary Color Red: #FF0000
 Accent Color White: #FFFFFF
-Text Color Pink FFADAD
+Text Color Pink #FFADAD
