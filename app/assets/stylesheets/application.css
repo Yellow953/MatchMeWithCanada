@@ -52,6 +52,13 @@ header a{
     width:100%;
     height: auto;
 }
+.book{
+    height: 300px;
+}
+.teacher{
+    height: 300px;
+    border-radius: 5%;
+}
 
 /* tablet */
 @media only screen and (max-width: 950px) {
