@@ -37,6 +37,9 @@ header a{
 .text-custom-pink{
     color: #FFADAD !important;
 }
+.text-custom-gray{
+    color: #B0B0B0 !important;
+}
 .bg-custom-pink{
     background-color: #FFADAD !important;
 }

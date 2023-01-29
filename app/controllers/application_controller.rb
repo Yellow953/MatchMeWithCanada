@@ -17,6 +17,12 @@ class ApplicationController < ActionController::Base
     def materials
     end
 
+    def visas        
+    end
+
+    def hire_a_professional
+    end
+
     def test
     end
 end

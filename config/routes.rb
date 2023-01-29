@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get "french_teachers", to: "application#french_teachers", as: "french_teachers"
   get "recruiters", to: "application#recruiters", as: "recruiters"
   get "materials", to: "application#materials", as: "materials"
+  get "visas", to: "application#visas", as: "visas"
+  get "hire_a_professional", to: "application#hire_a_professional", as: "hire_a_professional"
   
   get "test", to: "application#test"
 
