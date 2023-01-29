@@ -13,6 +13,6 @@ test:
 
 production:
   <<: *default
-  database: billing_biri
+  database: production_jyqu
   username: root
-  password: KpZi6yctXZEssNvK7FsXaMgkcY6zpauf
+  password: KujEGHhpJabpsTlRi0gIgP1YFYX5BtJB
