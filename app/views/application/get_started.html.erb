@@ -1,6 +1,7 @@
 <div class="container-fluid m-0 p-0 p-2">
     <div class="text-center">
-        <%= link_to "Don't know where to start yet?", "https://calendly.com/sleimen-aa/mock-interview", class:"btn bg-custom-pink text-white my-3", target: "_blank" %>
+        <%= link_to "Quick Advice", "https://calendly.com/matchmewithcanada/meeting", class:"btn bg-custom-pink text-white my-3", target: "_blank" %>
+        <h1 class="text-custom-red text-uppercase my-3"><i>Fastest path to canada</i></h1>
     </div>
     <div class="d-flex flex-row w-100">
         <div class="banner card shadow">
@@ -8,33 +9,63 @@
         </div>
     </div>
     <div class="text-center">
-        <%= link_to "Learn English", english_teachers_path, class:"btn btn-danger my-3" %><br>
-
-        <%= link_to "Learn French", french_teachers_path, class:"btn btn-danger my-3" %><br>
-
-        <%= link_to "Books and Materials", materials_path, class:"btn btn-danger my-3" %><br>
-    </div>
-    <div class="d-flex flex-row w-100">
-        <div class="banner card shadow">
-            <%= image_tag "img12", class:"img-fluid w-full h-auto" %>
-        </div>
-    </div>
-    <div class="text-center">
-        <%= link_to "Build a Career and Find Jobs", recruiters_path, class:"btn btn-danger my-3" %><br>
-
-        <%= link_to "Jobs Available", "https://t.me/jobsmatchmewithcanada", class:"btn btn-danger my-3", target: "_blank" %><br>
+        <h3 class="text-custom-red my-3">Step 1: Match Me With Jobs</h2>
     </div>
     <div class="d-flex flex-row w-100">
         <div class="banner card shadow">
             <%= image_tag "img9", class:"img-fluid w-full h-auto" %>
         </div>
     </div>
+    <div class="text-center banner">
+        <p class="text-custom-pink my-3">
+            Finding a job isn't that easy if you don't prepare very well for it. Crafting a Professional LinkedIn and CV
+            is the best start. These are the first things your employer will look at. They are critical for the first 
+            impression. Ifthey don't look professional and do not respect the canadian culture (sexism, genderism, racism...)
+            you have a really high chance of getting rejected. That is why you have to make sure you have established 
+            a professional portfolio. Match yourself with a Recruiter/HR.
+        </p>
+        <%= link_to "Match Me With Canadian Recruiters/HRs", recruiters_path, class:"btn btn-danger my-3" %><br>
+        <%= link_to "Test Your Luck", "https://t.me/jobsmatchmewithcanada", class:"btn btn-danger my-3", target: "_blank" %><br>
+        <%= link_to "Find a Job With a Consultant", hire_a_professional_path, class:"btn btn-danger my-3" %><br>    
+        <h2 class="text-custom-red my-3">Step 2: Match Me With English and French</h2>
+    </div>
+    <div class="d-flex flex-row w-100">
+        <div class="banner card shadow">
+            <%= image_tag "img12", class:"img-fluid w-full h-auto" %>
+        </div>
+    </div>
+    <div class="text-center banner">
+        <%= link_to "Book and Materials", materials_path, class:"btn btn-danger my-3" %><br> 
+        <p class="text-custom-pink my-3">
+            Also, you have to consider learning some languages, however, it is not mandatory, but for sure it 
+            will boost your chances in finding a job. After all, you will have to communicate in French or 
+            English at work. But, to be able to immigrate or apply for a Permanent Residency, even if you have
+            a work permit, you must pass language exams both in English and in French. Please take a look.
+        </p>
+        <%= link_to "Match Me With English Teachers", english_teachers_path, class:"btn btn-danger my-3" %><br>
+        <p class="text-custom-pink my-3">
+            The french language is extremely demanded to integrate more french speakers across Canada since 
+            only in Quebec people speak french. Canada wants to popularize its official language across its 
+            lands. Learn french you will never regret it!
+        </p>
+        <%= link_to "Match Me With French Teachers", french_teachers_path, class:"btn btn-danger my-3" %><br>    
+        <h2 class="text-custom-red my-3">Step 3: Match Me With Canadian Education</h2>
+    </div>
+    <div class="d-flex flex-row w-100">
+        <div class="banner card shadow">
+            <%= image_tag "wes", class:"img-fluid w-full h-auto" %>
+        </div>
+    </div>
     <div class="text-center">
-        <%= link_to "Visas", visas_path, class:"btn btn-danger my-3" %><br>
+        <%= link_to "Education Credential Assessment", "https://www.wes.org", target: "_blank", class:"btn btn-danger my-3" %><br>
+        <h2 class="text-custom-red my-3">Step 3: Match Me With Canadian Education</h2>
     </div>
     <div class="d-flex flex-row w-100">
         <div class="banner card shadow">
             <%= image_tag "img7", class:"img-fluid w-full h-auto" %>
         </div>
+    </div>
+    <div class="text-center">
+        <%= link_to "Visas", visas_path, class:"btn btn-danger my-3" %><br>
     </div>
 </div>
