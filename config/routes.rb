@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    registrations: 'users/registrations'
   }
   
   get "get_started", to: "application#get_started", as: "get_started"
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "hire_a_professional", to: "application#hire_a_professional", as: "hire_a_professional"
   
   get "test", to: "application#test"
+
+  get "/admin/users", to: "users#index", as: "users"
 
   root "application#index"
 end
