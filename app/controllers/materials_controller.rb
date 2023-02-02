@@ -1,26 +1,16 @@
-class UsersController < ApplicationController
-    before_action :set_user, only: %i[ edit update destroy ]
-    # role 0:normal 1:admin 2:english 3:french 4:recruiter 
+class MaterialsController < ApplicationController
+  before_action :set_material, only: %i[ show edit update destroy ]
 
-    def index
-       @users = User.where(role: 0) 
-    end
+  def index
+    @materials = Material.all
+  end
 
-    def english_teachers
-        @users = User.where(role: 2)
-    end
+  def show
+  end
 
-    def french_teachers
-        @users = User.where(role: 3)
-    end
-
-    def recruiters
-        @users = User.where(role: 4)
-    end
-
-    def new
-        @material = Material.new
-    end
+  def new
+    @material = Material.new
+  end
 
   def edit
   end
@@ -52,20 +42,22 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.destroy
+    @material.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_path, notice: "User was successfully destroyed." }
+      format.html { redirect_to materials_url, notice: "Material was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_user
-      @user = User.find(params[:id])
+    # Use callbacks to share common setup or constraints between actions.
+    def set_material
+      @material = Material.find(params[:id])
     end
 
-    def user_params
-      params.require(:user).permit(:name, :email, :image, :phone, :role, :description, :price)
+    # Only allow a list of trusted parameters through.
+    def material_params
+      params.require(:material).permit(:name, :price, :link)
     end
 end

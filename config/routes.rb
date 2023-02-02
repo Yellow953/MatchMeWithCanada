@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   
   get "test", to: "application#test"
 
-  get "/admin/users", to: "users#index", as: "users"
+  get "/admin/french", to: "users#french_teachers", as: "admin_french_teachers"
+  get "/admin/english", to: "users#english_teachers", as: "admin_english_teachers"
+  get "/admin/recruiters", to: "users#recruiters", as: "admin_recruiters"
+  get "/admin/materials", to: "materials#index", as: "admin_recruiters"
 
   root "application#index"
 end
