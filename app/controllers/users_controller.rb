@@ -2,22 +2,6 @@ class UsersController < ApplicationController
     before_action :set_user, only: %i[ edit update destroy ]
     # role 0:normal 1:admin 2:english 3:french 4:recruiter 
 
-    def index
-       @users = User.where(role: 0) 
-    end
-
-    def english_teachers
-        @users = User.where(role: 2)
-    end
-
-    def french_teachers
-        @users = User.where(role: 3)
-    end
-
-    def recruiters
-        @users = User.where(role: 4)
-    end
-
     def new
         @material = Material.new
     end

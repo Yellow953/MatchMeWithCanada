@@ -24,5 +24,6 @@ class ApplicationController < ActionController::Base
     end
 
     def test
+        render layout: "layouts/admin"
     end
 end

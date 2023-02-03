@@ -1,0 +1,24 @@
+<div class="col-auto col-md-3 col-xl-2 px-0 bg-custom-red">
+    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 w-100">
+        <a href="/admin" class="w-100 my-2 text-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            MatchMeWithCanada
+        </a>
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center w-100" id="menu">
+            <li>
+                <%= link_to "English Teachers", admin_english_teachers_path, class:"nav-link px-0 text-white" %>
+            </li>
+            <li>
+                <%= link_to "French Teachers", admin_french_teachers_path, class:"nav-link px-0 text-white" %>
+            </li>
+            <li>
+                <%= link_to "Recruiters", admin_recruiters_path, class:"nav-link px-0 text-white" %>
+            </li>
+            <li>
+                <%= link_to "Materials", admin_materials_path, class:"nav-link px-0 text-white" %>
+            </li>
+            <li>
+                <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link px-0 text-white"  %>
+            </li>
+        </ul>
+    </div>
+</div>

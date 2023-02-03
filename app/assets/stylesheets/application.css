@@ -43,6 +43,9 @@ header a{
 .bg-custom-pink{
     background-color: #FFADAD !important;
 }
+.bg-custom-red{
+    background-color: #FF0000 !important;
+}
 
 .banner{
     width: 50%;
@@ -59,6 +62,23 @@ header a{
     height: 300px;
     border-radius: 5%;
 }
+.custom-container{
+    border: 5px dashed red;
+    min-height: 90%;
+    overflow: scroll;
+}
+.max-w-150{
+    max-width: 150px;
+}
+.max-w-200{
+    max-width: 200px;
+}
+.admin-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
 
 /* tablet */
 @media only screen and (max-width: 950px) {

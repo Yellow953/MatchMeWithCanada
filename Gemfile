@@ -28,4 +28,6 @@ group :development, :test do
 end
 
 gem "devise"
-gem "ransack"
+gem "will_paginate"
+gem "will_paginate-bootstrap"
+gem "faker"
