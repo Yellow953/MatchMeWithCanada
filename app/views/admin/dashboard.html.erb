@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between mx-2">
   <h1>Clients</h1>
-  <%= link_to "New Client", "", class: "btn btn-primary my-auto" %>
+  <%= link_to "New Client", admin_new_user_path, class: "btn btn-primary my-auto" %>
 </div>
 <div class="container-fluid custom-container m-2 p-4">
   <table class="table table-striped">
@@ -37,8 +37,8 @@
           </td>
           <td class="max-w-200">
             <div class="d-flex my-2">
-              <%= link_to "edit", "", class: "btn btn-warning mx-2" %>
-              <%= button_to "delete", "", method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-danger mx-2" %>
+              <%= link_to "edit", admin_edit_user_path(id: user.id), class: "btn btn-warning mx-2" %>
+              <%= button_to "delete", admin_delete_user_path(id: user.id), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "btn btn-danger mx-2" %>
             <div>
           </td>
         <tr>

@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-between">
+  <h1>Edit User</h1>
+  <%= link_to "Back", :back, class:"btn btn-secondary my-auto" %>
+</div>
+<div class="container-fluid custom-container m-2 p-4">
+    <div class="m-3">
+        <%= form_with(model: @user, url: admin_update_user_path(id: @user.id), method: :post) do |form| %>
+            <div class="my-3">
+                <%= form.label :name %>
+                <%= form.text_field :name, class:"form-control input-field" %>
+            </div>
+            <div class="my-3">
+                <%= form.label :email %>
+                <%= form.email_field :email, class:"form-control input-field" %>
+            </div>
+            <div class="my-3">
+                <%= form.label :phone %>
+                <%= form.text_field :phone, class:"form-control input-field" %>
+            </div>
+            <div class="mb-3">
+                <%= form.file_field :image, class:"form-control input-field" %>
+            </div>
+            <div class="my-3">
+                <%= form.label :role %>
+                <%= form.select :role, options_for_select([['regular user','0'],['admin','1'],['english tea cher','2'],['french teacher','3'],['recruiter','4']]), {}, { :class => 'form-control input-field' } %>
+            </div>
+            <div class="my-3">
+                <%= form.label :price %>
+                <%= form.number_field :price, class:"form-control input-field" %>
+            </div>
+            <div class="my-3">
+                <%= form.label :description %>
+                <%= form.text_field :description, class:"form-control input-field" %>
+            </div>
+
+            <div class="my-3">
+                <%= form.submit class: "btn btn-danger" %>
+            </div>
+        <% end %>
+    </div>
+
+</div>

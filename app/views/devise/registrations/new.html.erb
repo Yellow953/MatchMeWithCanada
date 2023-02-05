@@ -1,44 +1,36 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, class:"form-control input-field" %>
+<body>
+  <div class="container mt-5">
+    <div class="row mt-5">
+      <div class="col-sm-8 col-md-6 col-lg-4 mx-auto mt-5">
+        <div class="card border-0 shadow rounded-3 my-5 bg-custom-red">
+          <div class="card-body p-4 p-sm-5">
+            <h2 class="card-title text-center mb-5 text-white">Sign Up</h2>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <div class="mb-3">
+                <%= f.text_field :name, class:"form-control input-field", placeholder:"john doe" %>
+              </div>
+              <div class="mb-3">
+                <%= f.text_field :phone, class:"form-control input-field", placeholder:"+96100000000" %>
+              </div>
+              <div class="mb-3">
+                <%= f.file_field :image, class:"form-control input-field" %>
+              </div>
+              <div class="mb-3">
+                <%= f.email_field :email, class:"form-control input-field", placeholder:"name@example.com" %>
+              </div>
+              <div class="mb-3">
+                <%= f.password_field :password, class:"form-control input-field", placeholder:"Password" %>
+              </div>
+              <div class="mb-3">
+                <%= f.password_field :password_confirmation, class:"form-control input-field", placeholder:"Password" %>
+              </div>
+              <div class="d-grid">
+                <%= f.submit "Sign up", class:"btn btn-primary text-uppercase fw-bold" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, value:"+961", class:"form-control input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, class:"form-control input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, class:"form-control input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class:"form-control input-field" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image, class:"form-control input-field" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up", class:"btn btn-primary" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</body>
