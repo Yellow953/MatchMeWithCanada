@@ -1,6 +1,12 @@
 <div class="d-flex justify-content-between mx-2">
-  <h1>English Teachers</h1>
   <%= link_to "New English Teacher", admin_new_user_path, class: "btn btn-primary my-auto" %>
+
+  <%= search_form_for(@q, url: "/admin/english", method: :get) do |f| %>
+    <div class="d-flex my-auto">
+      <%= f.search_field :name_cont, placeholder: "Search...", class:"form-control input-field" %>
+      <%= f.submit "Search", class:"btn btn-primary mx-2" %>
+    </div>
+  <% end %>
 </div>
 <div class="container-fluid custom-container m-2 p-4">
   <table class="table table-striped">
@@ -44,6 +50,9 @@
           </td>
         <tr>
       <% end %>
+      <tr>
+        <td colspan="4"><%= will_paginate @users %></td>
+      </tr>
     </tbody>
   </table>
 </div>

@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-between">
+  <h1>Edit Material</h1>
+  <%= link_to "Back", :back, class:"btn btn-secondary my-auto" %>
+</div>
+<div class="container-fluid custom-container m-2 p-4">
+    <div class="m-3">
+        <%= form_with(model: @material, url: admin_update_material_path(id: @material.id), method: :post) do |form| %>
+            <div class="my-3">
+                <%= form.label :name %>
+                <%= form.text_field :name, class:"form-control input-field" %>
+            </div>
+            <div class="my-3">
+                <%= form.label :price %>
+                <%= form.number_field :price, class:"form-control input-field" %>
+            </div>
+            <div class="my-3">
+                <%= form.label :link %>
+                <%= form.text_field :link, class:"form-control input-field" %>
+            </div>
+            <div class="mb-3">
+                <%= form.file_field :image, class:"form-control input-field" %>
+            </div>
+
+            <div class="my-3">
+                <%= form.submit class: "btn btn-danger" %>
+            </div>
+        <% end %>
+    </div>
+
+</div>

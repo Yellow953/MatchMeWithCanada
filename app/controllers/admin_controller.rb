@@ -3,27 +3,32 @@ class AdminController < ApplicationController
     before_action :admin_check
 
     def dashboard
-        @users = User.where(role: 0) 
+        @q = User.where(role: 0).ransack(params[:q])
+        @users = @q.result(distinct: true).paginate(page: params[:page], per_page: 10)
         render layout: "layouts/admin"
     end
  
     def english_teachers
-        @users = User.where(role: 2)
+        @q = User.where(role: 2).ransack(params[:q])
+        @users = @q.result(distinct: true).paginate(page: params[:page], per_page: 10)
         render layout: "layouts/admin"
     end
  
     def french_teachers
-        @users = User.where(role: 3)
+        @q = User.where(role: 3).ransack(params[:q])
+        @users = @q.result(distinct: true).paginate(page: params[:page], per_page: 10)
         render layout: "layouts/admin"
     end
  
     def recruiters
-        @users = User.where(role: 4)
+        @q = User.where(role: 4).ransack(params[:q])
+        @users = @q.result(distinct: true).paginate(page: params[:page], per_page: 10)
         render layout: "layouts/admin"
     end
 
     def materials
-        @materials = Material.all
+        @q = Material.ransack(params[:q])
+        @materials = @q.result(distinct: true).paginate(page: params[:page], per_page: 10)
         render layout: "layouts/admin"
     end
     
@@ -64,6 +69,43 @@ class AdminController < ApplicationController
         redirect_to admin_path
     end
     
+    def new_material
+        @material = Material.new
+    end
+
+    def save_material
+        @material = Material.new(material_params)
+        if @material.save
+            flash[:success] = "Material successfully created"
+            redirect_to admin_materials_path
+        else
+            flash[:danger] = "Could not create material"
+            redirect_to admin_new_material_path
+        end
+    end
+    
+    def edit_material
+        set_material
+    end
+    
+    def update_material
+        set_material
+        if @material.update(material_params)
+            flash[:success] = "Material successfully updated"
+            redirect_to admin_materials_path
+        else
+            flash[:danger] = "Could not update material"
+            redirect_to admin_edit_material_path
+        end
+    end
+    
+    def delete_material
+        set_material
+        @material.destroy
+        flash[:success] = "Material deleted"
+        redirect_to admin_materials_path
+    end
+    
     protected
         def admin_check
             if current_user.role != 1
@@ -75,5 +117,11 @@ class AdminController < ApplicationController
         end
         def user_params
             params.require(:user).permit(:name, :email, :role, :image, :price, :description, :phone, :password, :password_confirmation)
+        end
+        def set_material
+            @material = Material.find(params[:id])
+        end
+        def material_params
+            params.require(:material).permit(:name, :image, :price, :link)
         end
 end

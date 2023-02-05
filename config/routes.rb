@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   get "visas", to: "application#visas", as: "visas"
   get "hire_a_professional", to: "application#hire_a_professional", as: "hire_a_professional"
   
-  get "test", to: "application#test"
-
   get "/admin", to: "admin#dashboard", as: "admin"
   get "/admin/french", to: "admin#french_teachers", as: "admin_french_teachers"
   get "/admin/english", to: "admin#english_teachers", as: "admin_english_teachers"
@@ -24,6 +22,14 @@ Rails.application.routes.draw do
   get "/admin/user/:id", to: "admin#edit_user", as: "admin_edit_user"
   post "/admin/user/:id", to: "admin#update_user", as: "admin_update_user"
   delete "/admin/user/:id", to: "admin#delete_user", as: "admin_delete_user"
+
+  get "/admin/material/new", to: "admin#new_material", as: "admin_new_material"
+  post "/admin/material/save", to: "admin#save_material", as: "admin_save_material"
+  get "/admin/material/:id", to: "admin#edit_material", as: "admin_edit_material"
+  post "/admin/material/:id", to: "admin#update_material", as: "admin_update_material"
+  delete "/admin/material/:id", to: "admin#delete_material", as: "admin_delete_material"
+
+  get "test", to: "application#test"
 
   root "application#index"
 end
