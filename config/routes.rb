@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   delete "/admin/material/:id", to: "admin#delete_material", as: "admin_delete_material"
 
   get "test", to: "application#test"
+  get "download", to: "application#download_mobile_app", as: "download_mobile_app"
 
   root "application#index"
 end

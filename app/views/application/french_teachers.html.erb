@@ -2,74 +2,32 @@
     <div class="m-5">
         <div class="d-flex justify-content-between my-3">
             <%= link_to "Book a Teacher", "https://docs.google.com/forms/d/e/1FAIpQLSevvPvgH9mqJu8PQaRrdU8l36WQn1mP-7VfYhGUV3q6rBcHLA/viewform?usp=send_form", class:"btn btn-danger my-auto", target: "_blank" %>
-            <form action="/" method="POST">
-                <div class="d-flex">
-                    <input type="text" placeholder="Search..." class="form-control input-field">
-                    <button class="btn btn-danger">Search</button>
+            <%= search_form_for(@q, url: "/french_teachers", method: :get) do |f| %>
+                <div class="d-flex my-auto">
+                <%= f.search_field :name_cont, placeholder: "Search...", class:"form-control input-field" %>
+                <%= f.submit "Search", class:"btn btn-danger mx-2" %>
                 </div>
-            </form>
+            <% end %>
         </div>
         <div class="row">
-            <div class="col-md-3 my-3">
-                <div class="card shadow p-2 text-center">
-                    <a href="teacher/french/1" class="nav-link">
-                        <%= image_tag "teachers/french/french1", class:"profile-image teacher" %>
-                        <div class="mt-3 text-custom-red">
-                            Nahla E.<br>
-                            A1, A2, DELF
-                        </div>
-                        <span class="text-success">10.00$/hr</span>
-                    </a>
+            <% @users.each do |user| %>
+                <div class="col-md-3 my-3">
+                    <div class="card shadow p-2 text-center">
+                        <a href="" class="nav-link">
+                            <% if user.image.attached? %>
+                                <%= image_tag user.image, class:"profile-image teacher" %>
+                            <% else %>
+                                <%= image_tag "default_profile", class:"profile-image teacher" %>
+                            <% end %>
+                            <div class="mt-3 text-custom-red">
+                                <%= user.name %><br>
+                                <%= user.description %>
+                            </div>
+                            <span class="text-success"><%= user.price %>$/hr</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 my-3">
-                <div class="card shadow p-2 text-center">
-                    <a href="teacher/french/2" class="nav-link">
-                        <%= image_tag "teachers/french/french2", class:"profile-image teacher" %>
-                        <div class="mt-3 text-custom-red">
-                            Farah D.<br>
-                            Pre A1, A1, A2, B1, B2, DELF, Francais des affaires
-                        </div>
-                        <span class="text-success">10.00$/hr</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 my-3">
-                <div class="card shadow p-2 text-center">
-                    <a href="teachers/french/french/3" class="nav-link">
-                        <%= image_tag "teachers/french/french3", class:"profile-image teacher" %>
-                        <div class="mt-3 text-custom-red">
-                            Marwa G.<br>
-                            TCF, DEF, Pre A1, A1, A2, B1, B2, C1, C2, DELF
-                        </div>
-                        <span class="text-success">30.00$/hr</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 my-3">
-                <div class="card shadow p-2 text-center">
-                    <a href="teacher/french/4" class="nav-link">
-                        <%= image_tag "teachers/french/french4", class:"profile-image teacher" %>
-                        <div class="mt-3 text-custom-red">
-                            Manal G.<br>
-                            TCF, TEF, DELF, A1, A2, B1, B2 
-                        </div>
-                        <span class="text-success">20.00$/hr</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 my-3">
-                <div class="card shadow p-2 text-center">
-                    <a href="teacher/french/5" class="nav-link">
-                        <%= image_tag "teachers/french/french5", class:"profile-image teacher" %>
-                        <div class="mt-3 text-custom-red">
-                            Hoda N.<br>
-                            Pre A1, A1, A2, B1, B2, C1, C2, DELF
-                        </div>
-                        <span class="text-success">20.00$/hr</span>
-                    </a>
-                </div>
-            </div>
+            <% end %>
         </div>
     </div>
 </div>
