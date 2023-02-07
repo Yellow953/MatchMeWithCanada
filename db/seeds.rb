@@ -1,1 +1,1 @@
-User.create(email: "matchmewithcanada@gmail.com", password: "Match_2023", password_confirmation:"Match_2023", role: 1, phone:"+96170184532", name:"Match Me With Canada", price: nil, description: nil)
+User.create(email: "matchmewithcanada@gmail.com", password: "Match_2023", password_confirmation:"Match_2023", role: 1, phone:"+96170184532", name:"Match Me With Canada")
