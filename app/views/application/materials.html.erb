@@ -1,10 +1,10 @@
 <div class="container-fluid m-0 p-0 p-2">
-    <div class="m-5">
+    <div class="m-3 m-md-5">
         <div class="d-flex justify-content-end my-3">
             <%= search_form_for(@q, url: "/materials", method: :get) do |f| %>
                 <div class="d-flex my-auto">
-                <%= f.search_field :name_cont, placeholder: "Search...", class:"form-control input-field" %>
-                <%= f.submit "Search", class:"btn btn-danger mx-2" %>
+                    <%= f.search_field :name_cont, placeholder: "Search...", class:"form-control input-field" %>
+                    <%= f.submit "Search", class:"btn btn-danger mx-2" %>
                 </div>
             <% end %>
         </div>
