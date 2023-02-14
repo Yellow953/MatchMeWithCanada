@@ -37,7 +37,7 @@ class AdminController < ApplicationController
     end
 
     def save_user
-        @user = User.new(user_params)
+        @user = User.create!(user_params)
         if @user.save
             flash[:success] = "User successfully created"
             redirect_to admin_path
@@ -74,7 +74,7 @@ class AdminController < ApplicationController
     end
 
     def save_material
-        @material = Material.new(material_params)
+        @material = Material.create!(material_params)
         if @material.save
             flash[:success] = "Material successfully created"
             redirect_to admin_materials_path

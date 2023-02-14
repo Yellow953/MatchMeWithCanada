@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_190902) do
     t.string "name"
     t.string "phone"
     t.integer "role", default: 0
-    t.float "price"
+    t.string "price", default: "0"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
