@@ -116,7 +116,7 @@ class AdminController < ApplicationController
             @user = User.find(params[:id])
         end
         def user_params
-            params.require(:user).permit(:name, :email, :role, :image, :description, :phone, :password, :password_confirmation)
+            params.require(:user).permit(:name, :email, :role, :rate, :image, :description, :phone, :password, :password_confirmation)
         end
         def set_material
             @material = Material.find(params[:id])
